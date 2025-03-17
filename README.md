@@ -36,7 +36,7 @@ void loop() {
 
   // Пример настройки глубины посадки в зависимости от показаний датчика
   int sensorValue = analogRead(depthSensorPin);
-  int newDepth = map(sensorValue, 0, 1023, 30, 150);  // Маппируем значение на диапазон от 30 до 150 (глубина в мм)
+  int newDepth = map(sensorValue, 0, 1023, 30, 150);  // Маппируем значение на диапазон от 100 до 150 (глубина в мм)
   if (newDepth != depthPosition) {
     depthPosition = newDepth;
     depthServo.write(depthPosition); // Корректировка глубины
